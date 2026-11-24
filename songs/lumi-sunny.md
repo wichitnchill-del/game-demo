@@ -1,7 +1,7 @@
 # SUNNY SIDE UP!
 
 > ศิลปิน: ลูมิ · ซิงเกิลที่ 3
-> สไตล์: J-POP ไอดอลสนุกสุดๆ ~172 BPM ดนตรีสดใส เครื่องเป่า ปรบมือ เสียงแฟนตะโกนเยอะ
+> สไตล์: J-POP ไอดอลแนวเพลงฉลอง ดื่มด่ำกับความสุขแต่มันและเร้าใจ ~172 BPM เครื่องเป่าใหญ่ กลองตึงตัง ดรอปหลัง Bridge เสียงแฟนตะโกนเยอะ
 > ภาษา: ร้องภาษาอังกฤษ · แร็ปภาษาญี่ปุ่น
 > ฮุค: **"Sunny side up! Flip it, flip it!"**
 
@@ -124,7 +124,12 @@ Sunny side, sunny side up!
 
 ---
 
-**[Bridge]** *(ดนตรีเบรกเหลือแค่ปรบมือ · ชวนคนดู)*
+**[Bridge]** *(ช่วงแรกช้าลง ดื่มด่ำ หลับตา · ค่อยๆ บิลด์ แล้วเหลือแค่ปรบมือ ชวนคนดู · "JUMP!" แล้วดรอปเต็มวง)*
+Close your eyes... breathe it in...
+This is it, this is where we've been
+Every bruise and every rainy night
+Led us here to this golden light
+Hold it... hold it... feel it in your chest...
 Clap your hands! (Clap clap!)
 Stomp your feet! (Stomp stomp!)
 Grab the hand of anyone you meet!
@@ -182,7 +187,7 @@ Sunny Side Up!
 
 ### Style of Music
 ```text
-upbeat J-pop idol song, super happy and energetic, cute female idol vocal, 172 BPM, bright brass section, hand claps, funky bass, sparkling synths, cheerful crowd call-and-response shouts, playful Japanese female rap sections, festival vibe, anime insert song, feel-good, fun
+euphoric J-pop idol anthem, blissful and hype, powerful bright female idol vocal, 172 BPM, big brass section, hand claps, driving four-on-the-floor drums, funky bass, soaring synths, festival EDM-pop drop after bridge, massive crowd call-and-response shouts, energetic Japanese female rap, anthemic, exhilarating, feel-good, celebration
 ```
 
 ### Exclude Styles
@@ -274,7 +279,12 @@ Sunny side, sunny side up!
 いっせーの で ジャンプ しよう
 ワン・ツー… サニーサイド アップ!
 
-[Bridge: breakdown, only hand claps and crowd]
+[Bridge: half-time, dreamy and blissful, slowly building tension then hand claps and crowd]
+Close your eyes... breathe it in...
+This is it, this is where we've been
+Every bruise and every rainy night
+Led us here to this golden light
+Hold it... hold it... feel it in your chest...
 Clap your hands! (Clap clap!)
 Stomp your feet! (Stomp stomp!)
 Grab the hand of anyone you meet!
