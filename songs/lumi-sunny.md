@@ -11,8 +11,8 @@
 ---
 
 **[Intro]** *(เสียงตอกไข่ใส่กระทะ · ฉ่า! · แล้วดนตรีเข้าเต็ม)*
-(Crack!) Good morning!
-(Sizzle!) Good morning!
+(Crack!) Hey, are you ready!
+(Sizzle!) Hey, are you ready!
 Sunny side up!
 Let's go!
 
@@ -205,8 +205,8 @@ sad, ballad, slow, dark, male vocal, heavy metal, screamo, growl, trap, minor ke
 ### Lyrics (คัดลอกทั้งกล่อง)
 ```text
 [Intro: egg crack sound effect, sizzle, crunchy guitar riff kicks in]
-(Crack!) Good morning!
-(Sizzle!) Good morning!
+(Crack!) Hey, are you ready!
+(Sizzle!) Hey, are you ready!
 Sunny side up!
 Let's go!
 
