@@ -46,7 +46,7 @@ Sunny side, sunny side up!
 
 ---
 
-**[Rap 1]** *(テンポそのまま · ノリノリ · ปรบมือ)*
+**[Rap 1]** *(เสียงกวนๆ ยียวน ร้องเหมือนแกล้งคน · ปรบมือ)*
 いただきます みんなで せーの!
 たまご わって フライパン じゅー!
 ちょっと こげても だいじょうぶ
@@ -100,27 +100,33 @@ Sunny side, sunny side up!
 
 ---
 
-**[Rap 2]** *(เร็วขึ้นนิด · ทุกคนร้องตาม)*
+**[Rap 2]** *(เร็วขึ้นนิด · เสียงกวนที่สุดในเพลง แซวฮารุ มีหัวเราะคิกคัก · แฟนตะโกนตอบ)*
+ねえ ねえ きいた? (なに なに?)
+あのこ かお まっか (うそ〜!)
 ドン! ドン! パン! (ドン! ドン! パン!)
 まつりの よぞら はなび どーん!
 わたあめ ふたつ はんぶんこ
 ほっぺた あかい だれのせい?
+しらな〜い べーっだ! (え〜!)
 はしって ころんで また わらう
 きみと いれば まいにち まつり
 いっせーの で ジャンプ しよう
 ワン・ツー… サニーサイド アップ!
 
 > **Romaji:**
+> Nee nee kiita? (Nani nani?)
+> Ano ko kao makka (Uso~!)
 > Don! Don! Pan! (Don! Don! Pan!)
 > Matsuri no yozora hanabi doon!
 > Wataame futatsu hanbunko
 > Hoppeta akai, dare no sei?
+> Shiranaai, beeda! (Eeh~!)
 > Hashitte koronde mata warau
 > Kimi to ireba mainichi matsuri
 > Isseeno de janpu shiyou
 > Wan, tsuu... Sanii saido appu!
 >
-> **ความหมาย:** ตูม! ตูม! แปะ! · ท้องฟ้ายามค่ำงานเทศกาล ดอกไม้ไฟ ตูม! · สายไหมสองไม้ แบ่งกันคนละครึ่ง · แก้มแดงเพราะใครกันนะ? · วิ่ง ล้ม แล้วก็หัวเราะอีก · ถ้าอยู่กับเธอ ทุกวันคืองานเทศกาล · หนึ่ง สอง แล้วกระโดดพร้อมกัน · วัน ทู... ซันนี่ไซด์อัป!
+> **ความหมาย:** นี่ๆ ได้ยินยัง? (อะไรๆ?) · ยัยคนนั้นหน้าแดงแจ๋เลย (โกหก~!) · ตูม! ตูม! แปะ! · ท้องฟ้ายามค่ำงานเทศกาล ดอกไม้ไฟ ตูม! · สายไหมสองไม้ แบ่งกันคนละครึ่ง · แก้มแดงเพราะใครกันนะ? · ไม่รู้หรอก~ แบร่! (เอ๊~!) · วิ่ง ล้ม แล้วก็หัวเราะอีก · ถ้าอยู่กับเธอ ทุกวันคืองานเทศกาล · หนึ่ง สอง แล้วกระโดดพร้อมกัน · วัน ทู... ซันนี่ไซด์อัป!
 
 ---
 
@@ -171,7 +177,8 @@ See you tomorrow, sunny side up! ☆
 | "wrote a name down that will never fade" | ชื่อน็อลล์ในสมุด |
 | "the kitchen's way too small / save you a chair" | อุโมงค์ร่ม และเก้าอี้ตัวที่ห้าของโอลี่ |
 | Rap 2 ดอกไม้ไฟ สายไหมสองไม้ | ตอน 23 เทศกาลดอกไม้ไฟ (โอลี่ซื้อสายไหมให้ฮารุ) |
-| "ほっぺた あかい だれのせい?" (แก้มแดงเพราะใคร) | แซวฮารุ |
+| "ほっぺた あかい だれのせい?
+しらな〜い べーっだ! (え〜!)" (แก้มแดงเพราะใคร) | แซวฮารุ |
 | Bridge "in three... two... Nah, forget it, JUMP!" | นับไม่ถึงสาม ล้อเรนแบบขำๆ |
 
 > เพลงแรกพูดกับแฟนทั้งฮอลล์ · เพลงสองพูดกับคนคนเดียว · **เพลงสามพูดกับทุกคนที่นั่งกินข้าวโต๊ะเดียวกัน**
@@ -187,7 +194,7 @@ Sunny Side Up!
 
 ### Style of Music
 ```text
-euphoric J-pop idol anthem, blissful and hype, powerful bright female idol vocal, 172 BPM, big brass section, hand claps, driving four-on-the-floor drums, funky bass, soaring synths, festival EDM-pop drop after bridge, massive crowd call-and-response shouts, energetic Japanese female rap, anthemic, exhilarating, feel-good, celebration
+euphoric J-pop idol anthem, blissful and hype, powerful bright female idol vocal, 172 BPM, big brass section, hand claps, driving four-on-the-floor drums, funky bass, soaring synths, festival EDM-pop drop after bridge, massive crowd call-and-response shouts, cheeky teasing Japanese female rap with bratty playful voice, anthemic, exhilarating, feel-good, celebration
 ```
 
 ### Exclude Styles
@@ -231,7 +238,7 @@ Life is better when it's shared like this
 Sunny side up! (Sunny side up!)
 Sunny side, sunny side up!
 
-[Rap 1: playful Japanese female rap, hand claps]
+[Rap 1: cheeky bratty Japanese female rap, teasing sing-song voice, playful attitude, hand claps]
 いただきます みんなで せーの!
 たまご わって フライパン じゅー!
 ちょっと こげても だいじょうぶ
@@ -269,11 +276,14 @@ Life is better when it's shared like this
 Sunny side up! (Sunny side up!)
 Sunny side, sunny side up!
 
-[Rap 2: faster Japanese female rap, festival drums, everyone shouts]
+[Rap 2: faster cheeky Japanese female rap, mischievous teasing voice, giggles, festival drums, crowd responds]
+ねえ ねえ きいた? (なに なに?)
+あのこ かお まっか (うそ〜!)
 ドン! ドン! パン! (ドン! ドン! パン!)
 まつりの よぞら はなび どーん!
 わたあめ ふたつ はんぶんこ
 ほっぺた あかい だれのせい?
+しらな〜い べーっだ! (え〜!)
 はしって ころんで また わらう
 きみと いれば まいにち まつり
 いっせーの で ジャンプ しよう
