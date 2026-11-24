@@ -1,7 +1,8 @@
 # ท่าเต้น SUNNY SIDE UP!
 
-> เพลง: `lumi-sunny.md` · 172 BPM · 4/4 · ป็อปร็อกไอดอล สนุก มัน กวน
-> 1 ชุด = 8 จังหวะ ≈ 2.8 วินาที (เร็ว ท่าต้องเด้ง ไม่ต้องเป๊ะ)
+> เพลง: `lumi-sunny.md` · ไฟล์เสียง `lumi-sunny.m4a` · 259 BPM · 4/4 · ป็อปร็อกไอดอล สนุก มัน กวน
+> **เพลงจริงเร็ว 259 BPM ให้นับท่าแบบครึ่งจังหวะ (≈130 BPM)** 1 จังหวะในตารางท่า = 2 บีตของเพลง
+> 1 ชุด = 8 จังหวะ (นับครึ่ง) ≈ 3.7 วินาที · ท่าต้องเด้ง ไม่ต้องเป๊ะ
 > ใช้ใน: คอนเสิร์ตลูมิ · ฉากทุกคนมีความสุข · **เวอร์ชันกลุ่ม** ให้ทีมทั้งหมดเต้นด้วยกัน · เพลงชนะในเกม
 
 **ตัวละครของท่า:** เพลงแรกสดใส เพลงสองอ่อนโยน เพลงนี้ **ซนที่สุด** ลูมิเต้นเหมือนตอนอยู่นอกเวที แลบลิ้น ชี้แกล้งคน เล่นกีตาร์ลม ไม่ต้องสวย ขอให้มัน
@@ -234,7 +235,7 @@
 
 ### ท่าฮุค
 ```text
-Anime idol girl with blonde shoulder-length curled hair dancing energetically on a bright stage, J-pop pop-rock, 172 BPM,
+Anime idol girl with blonde shoulder-length curled hair dancing energetically on a bright stage, J-pop pop-rock, 259 BPM,
 signature move: arms form a big circle above head like a sunny side up egg, thumbs up, then mimes flipping a frying pan
 with each hand and catching the egg, sticks out her tongue playfully and points at the audience, yellow and orange stage lights,
 confetti, medium shot, front view, fun and cheeky mood
@@ -266,7 +267,7 @@ kneeling and leaning back, rock concert lights, spinning camera, energetic and f
 ---
 
 ## ตรวจก่อนส่ง
-- [x] ตรงกับ 172 BPM ครบ 8 จังหวะทุกชุด
+- [x] ตรงกับ 259 BPM (นับครึ่งจังหวะ) ครบ 8 จังหวะทุกชุด
 - [x] ท่าฮุคทำตามได้ขณะยืนกับที่ ใช้มือเปล่าได้ ใช้ซ้ำทุกคอรัส
 - [x] พลังแต่ละท่อนต่างกัน มีช่วงดื่มด่ำ (Bridge = 1) ก่อนระเบิด
 - [x] มีความร็อก (กีตาร์ลม ท่าเขา หมุนแขนกังหัน) และความกวน (แลบลิ้น นินทา ชี้แกล้ง)

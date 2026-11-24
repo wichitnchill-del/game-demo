@@ -1,7 +1,7 @@
 # SUNNY SIDE UP!
 
 > ศิลปิน: ลูมิ · ซิงเกิลที่ 3
-> สไตล์: J-POP ไอดอลผสมป็อปร็อก (กีตาร์แตก ริฟฟ์ติดหู กลองสด) แนวเพลงฉลอง ดื่มด่ำกับความสุขแต่มันและเร้าใจ ~172 BPM เครื่องเป่าใหญ่ กลองตึงตัง ดรอปหลัง Bridge เสียงแฟนตะโกนเยอะ
+> สไตล์: J-POP ไอดอลผสมป็อปร็อก (กีตาร์แตก ริฟฟ์ติดหู กลองสด) แนวเพลงฉลอง ดื่มด่ำกับความสุขแต่มันและเร้าใจ ~259 BPM (ตามเวอร์ชันที่สร้างจริงใน Suno) เครื่องเป่าใหญ่ กลองตึงตัง ดรอปหลัง Bridge เสียงแฟนตะโกนเยอะ
 > ภาษา: ร้องภาษาอังกฤษ · แร็ปภาษาญี่ปุ่น
 > ฮุค: **"Sunny side up! Flip it, flip it!"**
 
@@ -194,7 +194,7 @@ Sunny Side Up!
 
 ### Style of Music
 ```text
-J-pop pop-rock idol anthem, euphoric and hype, powerful bright female idol vocal, 172 BPM, crunchy overdriven electric guitars, punchy power chords, guitar riff hook, live rock drums, funky bass, brass stabs, hand claps, rock band drop after bridge with guitar solo, massive crowd call-and-response shouts, cheeky teasing Japanese female rap with bratty playful voice, danceable, exhilarating, celebration
+J-pop pop-rock idol anthem, euphoric and hype, powerful bright female idol vocal, 259BPM, crunchy overdriven electric guitars, punchy power chords, guitar riff hook, live rock drums, funky bass, brass stabs, hand claps, rock band drop after bridge with guitar solo, massive crowd call-and-response shouts, cheeky teasing Japanese female rap with bratty playful voice, danceable, exhilarating, celebration
 ```
 
 ### Exclude Styles
