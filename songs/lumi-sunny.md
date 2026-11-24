@@ -47,7 +47,7 @@ Sunny side, sunny side up!
 ---
 
 **[Rap 1]** *(เสียงกวนๆ ยียวน ร้องเหมือนแกล้งคน · ปรบมือ)*
-いただきます みんなで せーの!
+みんなで たべよう せーの!
 たまご わって フライパン じゅー!
 ちょっと こげても だいじょうぶ
 わらえば ぜんぶ おいしいよ!
@@ -57,7 +57,7 @@ Sunny side, sunny side up!
 ハイ! ハイ! サニーサイド アップ!
 
 > **Romaji:**
-> Itadakimasu minna de, seeno!
+> Minna de tabeyou, seeno!
 > Tamago watte furaipan, juu!
 > Chotto kogete mo daijoubu
 > Waraeba zenbu oishii yo!
@@ -66,7 +66,7 @@ Sunny side, sunny side up!
 > Kyou wa nannimo kazoenai
 > Hai! Hai! Sanii saido appu!
 >
-> **ความหมาย:** ทานแล้วนะ ทุกคนพร้อมกัน หนึ่ง สอง! · ตอกไข่ลงกระทะ ฉ่า! · ไหม้นิดหน่อยก็ไม่เป็นไร · ถ้าหัวเราะ ทุกอย่างก็อร่อย · เพื่อนอยู่ข้างๆ มากินด้วยกัน · น้ำตาเมื่อวานแห้งไปแล้ว · วันนี้ไม่ต้องนับอะไรเลย · ฮัย! ฮัย! ซันนี่ไซด์อัป!
+> **ความหมาย:** มากินด้วยกันทุกคน หนึ่ง สอง! · ตอกไข่ลงกระทะ ฉ่า! · ไหม้นิดหน่อยก็ไม่เป็นไร · ถ้าหัวเราะ ทุกอย่างก็อร่อย · เพื่อนอยู่ข้างๆ มากินด้วยกัน · น้ำตาเมื่อวานแห้งไปแล้ว · วันนี้ไม่ต้องนับอะไรเลย · ฮัย! ฮัย! ซันนี่ไซด์อัป!
 
 ---
 
@@ -139,7 +139,7 @@ Hold it... hold it... feel it in your chest...
 Clap your hands! (Clap clap!)
 Stomp your feet! (Stomp stomp!)
 Grab the hand of anyone you meet!
-Say "itadakimasu"! (Itadakimasu!)
+Say "Let's eat!" (Let's eat!)
 Say "thank you"! (Thank you!)
 Now everybody jump... in three... two...
 Nah, forget it, JUMP!
@@ -157,8 +157,8 @@ Sunny side, sunny side up!
 
 **[Outro]**
 (Sizzle...)
-Gochisousama!
-(Gochisousama!)
+Thanks for the food!
+(Thanks for the food!)
 See you tomorrow, sunny side up! ☆
 
 ---
@@ -239,7 +239,7 @@ Sunny side up! (Sunny side up!)
 Sunny side, sunny side up!
 
 [Rap 1: cheeky bratty Japanese female rap, teasing sing-song voice, playful attitude, hand claps]
-いただきます みんなで せーの!
+みんなで たべよう せーの!
 たまご わって フライパン じゅー!
 ちょっと こげても だいじょうぶ
 わらえば ぜんぶ おいしいよ!
@@ -298,7 +298,7 @@ Hold it... hold it... feel it in your chest...
 Clap your hands! (Clap clap!)
 Stomp your feet! (Stomp stomp!)
 Grab the hand of anyone you meet!
-Say "itadakimasu"! (Itadakimasu!)
+Say "Let's eat!" (Let's eat!)
 Say "thank you"! (Thank you!)
 Now everybody jump... in three... two...
 Nah, forget it, JUMP!
@@ -316,8 +316,8 @@ Sunny side up! (Sunny side up!)
 Sunny side, sunny side up!
 
 [Outro: sizzle sound, playful]
-Gochisousama!
-(Gochisousama!)
+Thanks for the food!
+(Thanks for the food!)
 See you tomorrow, sunny side up!
 
 [End]
