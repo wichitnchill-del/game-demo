@@ -1,7 +1,7 @@
 # SUNNY SIDE UP!
 
 > ศิลปิน: ลูมิ · ซิงเกิลที่ 3
-> สไตล์: J-POP ไอดอลแนวเพลงฉลอง ดื่มด่ำกับความสุขแต่มันและเร้าใจ ~172 BPM เครื่องเป่าใหญ่ กลองตึงตัง ดรอปหลัง Bridge เสียงแฟนตะโกนเยอะ
+> สไตล์: J-POP ไอดอลผสมป็อปร็อก (กีตาร์แตก ริฟฟ์ติดหู กลองสด) แนวเพลงฉลอง ดื่มด่ำกับความสุขแต่มันและเร้าใจ ~172 BPM เครื่องเป่าใหญ่ กลองตึงตัง ดรอปหลัง Bridge เสียงแฟนตะโกนเยอะ
 > ภาษา: ร้องภาษาอังกฤษ · แร็ปภาษาญี่ปุ่น
 > ฮุค: **"Sunny side up! Flip it, flip it!"**
 
@@ -194,17 +194,17 @@ Sunny Side Up!
 
 ### Style of Music
 ```text
-euphoric J-pop idol anthem, blissful and hype, powerful bright female idol vocal, 172 BPM, big brass section, hand claps, driving four-on-the-floor drums, funky bass, soaring synths, festival EDM-pop drop after bridge, massive crowd call-and-response shouts, cheeky teasing Japanese female rap with bratty playful voice, anthemic, exhilarating, feel-good, celebration
+J-pop pop-rock idol anthem, euphoric and hype, powerful bright female idol vocal, 172 BPM, crunchy overdriven electric guitars, punchy power chords, guitar riff hook, live rock drums, funky bass, brass stabs, hand claps, rock band drop after bridge with guitar solo, massive crowd call-and-response shouts, cheeky teasing Japanese female rap with bratty playful voice, danceable, exhilarating, celebration
 ```
 
 ### Exclude Styles
 ```text
-sad, ballad, slow, dark, male vocal, heavy metal, trap, minor key
+sad, ballad, slow, dark, male vocal, heavy metal, screamo, growl, trap, minor key
 ```
 
 ### Lyrics (คัดลอกทั้งกล่อง)
 ```text
-[Intro: egg crack sound effect, sizzle, band kicks in]
+[Intro: egg crack sound effect, sizzle, crunchy guitar riff kicks in]
 (Crack!) Good morning!
 (Sizzle!) Good morning!
 Sunny side up!
@@ -303,8 +303,9 @@ Say "thank you"! (Thank you!)
 Now everybody jump... in three... two...
 Nah, forget it, JUMP!
 
+[Guitar Solo: short, fun, playful]
 [Key Change]
-[Final Chorus: full band, everyone singing, maximum joy]
+[Final Chorus: full rock band, everyone singing, maximum joy]
 Sunny side up! Flip it, flip it!
 Happy is a recipe, you gotta mix it
 Sunny side up! Don't you skip it!
@@ -324,6 +325,8 @@ See you tomorrow, sunny side up!
 ```
 
 ### ถ้าผลลัพธ์ไม่ตรงใจ
+- **ร็อกเกินไป:** ลบ `crunchy overdriven electric guitars` ออก เหลือ `electric guitar riff`
+- **ร็อกน้อยไป:** เพิ่ม `J-rock, energetic band sound`
 - **ไม่สนุกพอ:** เพิ่ม `ska, big band brass, cheerleader chants` ใน Style
 - **แร็ปเร็วจนฟังไม่ทัน:** ใส่ `clear diction, bouncy flow` ในแท็ก [Rap]
 - **อยากได้เวอร์ชันสั้นสำหรับเกม (ฉากชนะ):** ใช้แค่ Intro → Chorus → Outro
