@@ -50,8 +50,10 @@ CombatHUD (CanvasLayer)
 ```text
 [GameObject] Canvas_CombatHUD (Canvas & GraphicRaycaster)
 ├── [GameObject] ScreenSafeArea (RectTransform - Managed by SafeArea script)
-│   ├── [Panel] TurnTimeline_Bar (HorizontalLayoutGroup)
-│   │   └── [Prefab] Timeline_Entry (Image, TextMeshProUGUI)
+│   ├── [Panel] Combo_Counter (VerticalLayoutGroup)
+│   │   ├── [Text] Txt_HitCount (TextMeshProUGUI)
+│   │   ├── [Text] Txt_ComboTier
+│   │   └── [Image] Img_ThreadTimer (Filled, 1.2s)
 │   ├── [Panel] Boss_TargetInfo (VerticalLayoutGroup)
 │   │   ├── [Text] Txt_BossName
 │   │   ├── [Slider] Sldr_HealthBar

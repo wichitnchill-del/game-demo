@@ -1,0 +1,13 @@
+{
+  "name": "core-blaker-voice",
+  "private": true,
+  "type": "module",
+  "description": "Generates Thai voice-over for Core Blaker cutscenes with ElevenLabs",
+  "scripts": {
+    "voices": "node --env-file=../../.env.local list-voices.mjs",
+    "generate": "node --env-file=../../.env.local generate.mjs"
+  },
+  "dependencies": {
+    "@elevenlabs/elevenlabs-js": "^2.80.0"
+  }
+}

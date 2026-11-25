@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Core Blaker — เดโมต่อสู้</title>
+<style>
+:root{--bg:#0f1220;--panel:#1a1f35;--line:#2c3354;--text:#e8eaf6;--dim:#8a90b4;--ok:#4cd28a;--warn:#f5c542;--bad:#ef5a5a;--seal:#5ab8ef;--accent:#9b7bff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Sarabun","Noto Sans Thai",system-ui,sans-serif;font-size:15px}
+#app{max-width:960px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:0 0 4px}
+.sub{color:var(--dim);font-size:13px;margin-bottom:12px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;flex:1 1 160px;min-width:150px;position:relative;transition:.2s}
+.card.active{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.card.out{opacity:.35}
+.card.target{cursor:pointer;border-color:var(--warn)}
+.card.target:hover{background:#262c4a}
+.name{font-weight:700}
+.tag{font-size:12px;color:var(--dim)}
+.bar{height:7px;background:#0b0e1a;border-radius:4px;margin:4px 0;overflow:hidden}
+.bar i{display:block;height:100%}
+.hp i{background:var(--ok)} .br i{background:var(--seal)} .ehp i{background:var(--bad)}
+.seal{font-size:12px;font-weight:700}
+.s0{color:var(--ok)} .s1{color:var(--warn)} .s2{color:var(--bad)}
+.badges{font-size:12px;margin-top:3px;min-height:16px}
+#enemies .card{flex:1 1 200px}
+#actions{margin:14px 0;display:flex;gap:8px;flex-wrap:wrap}
+button{background:#2a3160;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font:inherit;cursor:pointer}
+button:hover:not(:disabled){background:#38418a}
+button:disabled{opacity:.4;cursor:default}
+button small{display:block;color:var(--dim);font-size:11px}
+#log{background:#0b0e1a;border:1px solid var(--line);border-radius:10px;padding:10px;height:190px;overflow-y:auto;font-size:13px;line-height:1.6}
+#log .c{color:var(--warn)} #log .k{color:var(--bad)} #log .g{color:var(--ok)}
+.sec{margin:14px 0 6px;color:var(--dim);font-size:13px}
+#overlay{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;padding:16px}
+#overlay .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;max-width:440px;text-align:center}
+.weak{color:var(--warn);font-size:12px}
+</style>
+</head>
+<body>
+<div id="app">
+  <h1>Core Blaker — เฟส 1 เดโมต่อสู้</h1>
+  <div class="sub">ธาตุแพ้ทาง: ดิน &gt; ลม &gt; น้ำ &gt; ไฟ &gt; ดิน · ลมหายใจหมด = สับสน · ใช้เกินตัวตราร้าว → แตก = ออกจากการต่อสู้ · จบทั้งที่ตราร้าว = EXP x2</div>
+  <div class="sec">ศัตรู <span id="wave"></span></div>
+  <div id="enemies" class="row"></div>
+  <div class="sec">ทีม</div>
+  <div id="party" class="row"></div>
+  <div id="actions"></div>
+  <div id="log"></div>
+</div>
+<div id="overlay"><div class="box" id="obox"></div></div>
+<script>
+const BEAT={ดิน:'ลม',ลม:'น้ำ',น้ำ:'ไฟ',ไฟ:'ดิน'};
+const mult=(a,d)=>!a||!d?1:BEAT[a]===d?1.5:BEAT[d]===a?0.7:1;
+const rnd=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const SEAL=['ปกติ','ร้าว','แตก'];
+let exp=0, lv=1, wave=0;
+
+function mkParty(){return [
+ {id:'ren',name:'เรน',line:'เสริม',el:null,grade:6,hp:90,atk:11,skills:['สามวินาที','Support'],drain:1.4},
+ {id:'mio',name:'มิโอ',line:'เสริม',el:'ดิน',grade:4,hp:150,atk:12,skills:['กำแพงดิน'],crackEasy:true},
+ {id:'oli',name:'โอลี่',line:'แปร',el:'ลม',grade:5,hp:95,atk:10,skills:['เอียงโชค'],clover:0},
+ {id:'haru',name:'ฮารุ',line:'แปร',el:'น้ำ',grade:3,hp:85,atk:14,skills:['น้ำสะท้อน']},
+ {id:'setsu',name:'เซ็ตสึ',line:'แปร',el:'ลม',grade:3,hp:80,atk:13,skills:['ศรลม'],drain:1.5},
+].map(c=>({...c,maxhp:c.hp+lv*8,hp:c.hp+lv*8,atk:c.atk+lv*2,breath:100,seal:0,buff:0,guard:false,emo:0,confused:0}))}
+
+const WAVES=[
+ [{name:'ผู้ถูกฝังคำสั่ง',el:'ไฟ',hp:120,atk:13},{name:'ผู้ถูกฝังคำสั่ง',el:'น้ำ',hp:110,atk:12}],
+ [{name:'ยามตรา 13',el:'ดิน',hp:180,atk:15},{name:'ยามตรา 13',el:'ลม',hp:160,atk:16}],
+ [{name:'เลออน (ธาตุไฟ เกรด 1)',el:'ไฟ',hp:420,atk:20,boss:true,hidden:true}],
+];
+let party, enemies, turn=0, pending=null, logEl=document.getElementById('log');
+
+function log(t,c=''){logEl.innerHTML+=`<div class="${c}">${t}</div>`;logEl.scrollTop=1e9}
+const alive=a=>a.filter(x=>x.hp>0&&(x.seal||0)<2);
+
+function startWave(){
+  enemies=WAVES[wave].map(e=>({...e,maxhp:e.hp+lv*10,hp:e.hp+lv*10,revealed:!e.hidden}));
+  party.forEach(c=>{c.breath=Math.min(100,c.breath+40);c.buff=0;c.guard=false});
+  turn=0; log(`— ด่าน ${wave+1}: ${enemies.map(e=>e.name).join(', ')} —`,'c'); nextTurn(true);
+}
+
+function crack(c,why){
+  c.seal++;
+  if(c.seal===1) log(`⚠ ตราของ${c.name}ร้าว (${why})`,'c');
+  else{log(`✖ ตราของ${c.name}แตก! ออกจากการต่อสู้`,'k');}
+}
+function useBreath(c,n){
+  n=Math.round(n*(c.drain||1));
+  c.breath-=n;
+  if(c.breath<0){c.breath=0; crack(c,'ฝืนใช้เวทตอนลมหายใจหมด')}
+  else if(c.crackEasy&&c.breath<35&&c.seal===0&&Math.random()<.5) crack(c,'เสริมเกินตัว');
+}
+
+function render(){
+  document.getElementById('wave').textContent=`(ด่าน ${wave+1}/${WAVES.length} · Lv ${lv} · EXP ${exp})`;
+  document.getElementById('enemies').innerHTML=enemies.map((e,i)=>`
+   <div class="card ${e.hp<=0?'out':''} ${pending&&e.hp>0?'target':''}" onclick="pick(${i})">
+    <div class="name">${e.name}</div><div class="tag">ธาตุ${e.el}${e.boss?' · บอส':''}</div>
+    <div class="bar ehp"><i style="width:${e.hp/e.maxhp*100}%"></i></div>
+    <div class="tag">${Math.max(0,e.hp)}/${e.maxhp}</div>
+    ${e.boss?`<div class="weak">${e.revealed?'จุดอ่อน: เผยแล้ว (ดาเมจ x1.6)':'จุดอ่อน: ??? (ใช้น้ำสะท้อน)'}</div>`:''}
+   </div>`).join('');
+  const cur=party[turn];
+  document.getElementById('party').innerHTML=party.map(c=>`
+   <div class="card ${c===cur?'active':''} ${c.hp<=0||c.seal>=2?'out':''}">
+    <div class="name">${c.name} <span class="tag">${c.line}${c.el?' · '+c.el:''} · เกรด ${c.grade}</span></div>
+    <div class="bar hp"><i style="width:${Math.max(0,c.hp)/c.maxhp*100}%"></i></div>
+    <div class="tag">HP ${Math.max(0,c.hp)}/${c.maxhp}</div>
+    <div class="bar br"><i style="width:${c.breath}%"></i></div>
+    <div class="tag">ลมหายใจเวท ${c.breath}%</div>
+    <div class="seal s${c.seal}">ตรา: ${SEAL[c.seal]}</div>
+    <div class="badges">${c.buff?'⚡เสริม ':''}${c.guard?'🛡รับแทน ':''}${c.emo?'💧อารมณ์ ':''}${c.confused?'🌀สับสน ':''}${c.id==='oli'?'🍀ใบร้าว '+c.clover+'/3':''}</div>
+   </div>`).join('');
+  const A=document.getElementById('actions');
+  if(!cur||pending){A.innerHTML=pending?`<span class="tag">เลือกเป้าหมาย…</span> <button onclick="pending=null;render()">ยกเลิก</button>`:'';return}
+  const sk={
+   'สามวินาที':['บัฟตัวเอง 1 เทิร์น ดาเมจ x2','ลมหายใจ -20'],
+   'Support':['บัฟทุกคน 1 เทิร์น','ลมหายใจ -40'],
+   'กำแพงดิน':['รับดาเมจแทนทีมจนถึงเทิร์นหน้า','ลมหายใจ -25'],
+   'เอียงโชค':['คริติคอลแน่นอน x2.5','ใบโคลเวอร์ร้าว +1'],
+   'น้ำสะท้อน':['เผยจุดอ่อนบอส · เข้าโหมดอารมณ์','ป้องกันลด'],
+   'ศรลม':['ยิงแม่น ดาเมจสูง','ลมหายใจ -30'],
+  };
+  A.innerHTML=`<button onclick="act('atk')">โจมตี<small>ฟรี</small></button>`+
+   cur.skills.map(s=>`<button onclick="act('${s}')" ${s==='เอียงโชค'&&cur.clover>=3?'disabled':''}>${s}<small>${sk[s][0]} · ${sk[s][1]}</small></button>`).join('')+
+   `<button onclick="act('rest')">พักหายใจ<small>ลมหายใจ +30</small></button>`;
+}
+
+function act(a){
+  const c=party[turn];
+  if(a==='atk'||a==='ศรลม'||a==='เอียงโชค'){pending=a;render();return}
+  if(a==='rest'){c.breath=Math.min(100,c.breath+30);log(`${c.name}พักหายใจ`);}
+  if(a==='สามวินาที'){useBreath(c,20);c.buff=2;log(`${c.name}: “เสริม… สามวินาที”`,'g')}
+  if(a==='Support'){useBreath(c,40);alive(party).forEach(p=>p.buff=2);log(`${c.name}ใช้ Support เสริมทุกคน`,'g')}
+  if(a==='กำแพงดิน'){useBreath(c,25);c.guard=true;log(`${c.name}ตั้งกำแพงดิน รับแทนทีม`,'g')}
+  if(a==='น้ำสะท้อน'){useBreath(c,20);c.emo=1;enemies.forEach(e=>e.revealed=true);log(`${c.name}มองผ่านน้ำสะท้อน… เห็นจุดอ่อน`,'g')}
+  endAct();
+}
+function pick(i){
+  const e=enemies[i]; if(!pending||e.hp<=0)return;
+  const c=party[turn]; let base=c.atk, crit=false;
+  if(pending==='ศรลม'){useBreath(c,30);base*=2.2}
+  if(pending==='เอียงโชค'){c.clover++;crit=true;base*=2.5;log(`🍀 แสงเขียวลอดขอบปลอกแขน… ใบโคลเวอร์ร้าว ${c.clover}/3`,'c');
+    if(c.clover>=3)log('ใบโคลเวอร์ร่วง… ที่บ้าน ป้าเพียงอ่อนแรงลง','k')}
+  if(pending==='atk'&&Math.random()<.1){crit=true;base*=1.8}
+  hit(c,e,base,crit); pending=null; endAct();
+}
+function hit(c,e,base,crit){
+  let d=base*mult(c.el,e.el)*(c.buff?2:1)*(e.boss&&e.revealed?1.6:1);
+  d=Math.round(d*(0.9+Math.random()*.2)); e.hp-=d;
+  const m=mult(c.el,e.el);
+  log(`${c.name} → ${e.name} ${d}${crit?' คริติคอล!':''}${m>1?' (ได้เปรียบธาตุ)':m<1?' (เสียเปรียบธาตุ)':''}`);
+  if(e.hp<=0)log(`${e.name} ล้มลง`,'g');
+}
+function endAct(){
+  if(!alive(enemies).length) return winWave();
+  turn++; nextTurn();
+}
+function nextTurn(first){
+  while(turn<party.length && (party[turn].hp<=0||party[turn].seal>=2)) turn++;
+  if(turn>=party.length){enemyPhase();return}
+  const c=party[turn];
+  if(c.buff)c.buff--; if(c.guard&&!first)c.guard=false;
+  if(c.breath<=0&&!c.confused){c.confused=1}
+  if(c.confused){
+    c.confused=0;const t=alive(party).filter(p=>p!==c);
+    if(t.length){const v=t[rnd(0,t.length-1)];const d=Math.round(c.atk*.8);v.hp-=d;log(`🌀 ${c.name}สับสน! โจมตี${v.name} ${d}`,'k')}
+    c.breath=20; turn++; return nextTurn();
+  }
+  render();
+}
+function enemyPhase(){
+  for(const e of alive(enemies)){
+    const ps=alive(party); if(!ps.length)break;
+    let t=ps.find(p=>p.guard)||ps[rnd(0,ps.length-1)];
+    let d=e.atk*mult(e.el,t.el)*(t.guard?.6:1)*(t.emo?1.4:1)*(e.boss&&Math.random()<.3?1.8:1);
+    d=Math.round(d*(0.9+Math.random()*.2)); t.hp-=d;
+    log(`${e.name} → ${t.name} ${d}${t.guard?' (กำแพงดินรับไว้)':''}`,'k');
+    if(t.hp<=0){t.hp=0;log(`${t.name}หมดสติ`,'k')}
+    else if(t.guard&&d>t.maxhp*.25&&t.seal===0)crack(t,'รับแทนหนักเกินไป');
+  }
+  party.forEach(p=>{p.emo=0;p.guard=false});
+  if(!alive(party).length)return lose();
+  turn=0; nextTurn(true);
+}
+function winWave(){
+  const cracked=party.filter(p=>p.seal===1&&p.hp>0).length;
+  let g=40+wave*30; if(cracked){g*=2;log(`เจ็บแล้วรอด: ${cracked} คนจบทั้งที่ตราร้าว → EXP x2`,'g')}
+  exp+=g; while(exp>=lv*80){exp-=lv*80;lv++;log(`★ เลเวลขึ้น! Lv ${lv}`,'g');party.forEach(p=>{p.maxhp+=8;p.atk+=2})}
+  wave++; render();
+  if(wave>=WAVES.length)return show('ชนะ!','เลออนถอยไป… ยังมีอีกหลายเรื่องรออยู่ในเฟสต่อไป',`เล่นอีกครั้ง`);
+  show(`ผ่านด่าน ${wave}`,`ได้ EXP ${g}${cracked?' (x2 จากตราร้าว)':''}<br>ทีมฟื้นลมหายใจ +40 · ตราร้าวยังติดตัว`,'ด่านต่อไป',true);
+}
+function lose(){render();show('พ่ายแพ้','ทีมหมดแรง ลองใช้ธาตุให้ได้เปรียบ และอย่าฝืนลมหายใจ','เริ่มใหม่')}
+function show(t,b,btn,cont){
+  const o=document.getElementById('overlay');
+  document.getElementById('obox').innerHTML=`<h2>${t}</h2><p>${b}</p><button id="ob">${btn}</button>`;
+  o.style.display='flex';
+  document.getElementById('ob').onclick=()=>{o.style.display='none';cont?startWave():newGame()};
+}
+function newGame(){exp=0;lv=1;wave=0;logEl.innerHTML='';party=mkParty();startWave()}
+newGame();
+</script>
+</body>
+</html>
